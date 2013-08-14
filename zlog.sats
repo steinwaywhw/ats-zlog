@@ -126,7 +126,6 @@ fun
 zlog {ts:types} (ctx: !zlog_context | c: zlog_category, level: int, fmt: string, args: ts): void =
 "mac#zlog_handler"
 
-
 fun 
 dzlog_init (config: string, category: string): [n: int] (zlog_context (n == 0) | int (n)) =
 "mac#dzlog_init"
@@ -134,7 +133,6 @@ dzlog_init (config: string, category: string): [n: int] (zlog_context (n == 0) |
 fun 
 dzlog_set_category (ctx: !zlog_context | category: string): int =
 "mac#dzlog_set_category"
-
 
 fun 
 dzlog {ts:types} (ctx: !zlog_context | level: int, fmt: string, args: ts): void =
