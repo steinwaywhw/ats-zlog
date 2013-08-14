@@ -33,7 +33,7 @@ zlog_init (config: string): [n: int] (zlog_context ( n == 0 ) | int (n)) =
 "mac#zlog_init"
 
 fun
-zlog_reload (ctx: !zlog_context | config: string): int =
+zlog_reload (ctx: zlog_context | config: string): [n: int] (zlog_context ( n == 0 ) | int (n)) =
 "mac#zlog_reload"
 
 fun
@@ -59,6 +59,10 @@ zlog_category_is_not_null {l:addr} (c: zlog_category (l)): bool (l > null) =
 "mac#zlog_category_is_not_null"
 
 fun 
+zlog_category_is_null {l:addr} (c: zlog_category (l)): bool (l == null) =
+"mac#zlog_category_is_null"
+
+fun 
 zlog_put_mdc (ctx: !zlog_context | key: string, value: string): int =
 "mac#zlog_put_mdc"
 
@@ -82,7 +86,7 @@ zlog {ts:types} (ctx: !zlog_context | c: zlog_category, level: int, fmt: string,
 
 
 fun 
-dzlog_init (config: string, category: string): (zlog_context | int) =
+dzlog_init (config: string, category: string): [n: int] (zlog_context (n == 0) | int (n)) =
 "mac#dzlog_init"
 
 fun 

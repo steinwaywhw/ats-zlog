@@ -46,6 +46,10 @@ int zlog_category_is_not_null (zlog_category_t *c) {
 	return c != NULL;
 }
 
+int zlog_category_is_null (zlog_category_t *c) {
+	return c == NULL;
+}
+
 void zlog_fini_empty () {}
 
 %}
